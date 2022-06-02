@@ -1,3 +1,6 @@
-- gérer les erreurs SQL
-- écrire les nouvelles requêtes SQL
-- ajouter la validation des données# festivals-api-node
+# API festivals
+
+API for the ios app MusicFestivalApp
+
+originaly write in JS and being updated to TS
+
