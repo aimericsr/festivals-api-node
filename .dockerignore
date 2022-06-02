@@ -1,0 +1,11 @@
+/database
+/node_modules
+/postman
+/src
+.dockerignore
+.git
+.gitignore
+Dockerfile
+environment.d.ts
+tsconfig.json
+

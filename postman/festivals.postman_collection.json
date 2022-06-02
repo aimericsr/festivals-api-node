@@ -1,0 +1,898 @@
+{
+	"info": {
+		"_postman_id": "65ef1b52-304d-4051-97d1-baf3fc53fb00",
+		"name": "festivals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Access Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDQ5OTJjLTdiNzQtNDA1Yi05YzhhLTBmZGJhNTZkOTc5MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzODk1MTIzOX0.MYySdiEUNMjz8vAONIkim-YVLLOemMDGUP7GM_RMUYo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"a\",\n    \"password\" : \"a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNmODhmNTQ3LTY4MGMtNDNhMi1hN2VjLTA2ODUyZDNmODM5ZSIsImlhdCI6MTYzODg3NDY0NX0.b7g8CaAboYFzD9HGKBZ-xFn3knObDTEptVR1dJA_phA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Root\",\n    \"password\": \"Root\",\n    \"email\": \"Root@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiMzhkNGMyLWViZTUtNDJkNC04N2NiLTY0ZTRjYjQ5YTMyZSIsInJvbGUiOiJCQVNJQyIsImlhdCI6MTYzOTA3MDYxMiwiZXhwIjoxNjM5MDcxNTEyfQ.SY73JH_vjKW17JXaOkmlm0K7NVZBH92lM336GEwNdKA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyMDkwYzAwLTg1MDktNDFkYy1iNWFiLWQ4NTA3OGU3ZDMwNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzOTA2NDA2MSwiZXhwIjoxNjM5MDY0OTYxfQ.-j9ZrW8sIAZ6I_ScVW5N8rXdw3E0JPoIdPK5xTZcEl8",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users/646a645a-3694-40cc-98f9-70074535a0a1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"646a645a-3694-40cc-98f9-70074535a0a1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"newAdmin\",\n    \"password\" : \"newAdmin\",\n    \"email\" : \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/users/d8908152-1cd8-4e84-8c82-cbec92a49e78",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"d8908152-1cd8-4e84-8c82-cbec92a49e78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users/d8908152-1cd8-4e84-8c82-cbec92a49e78",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"d8908152-1cd8-4e84-8c82-cbec92a49e78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Artists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiMzhkNGMyLWViZTUtNDJkNC04N2NiLTY0ZTRjYjQ5YTMyZSIsInJvbGUiOiJCQVNJQyIsImlhdCI6MTYzOTA3MDYxMiwiZXhwIjoxNjM5MDcxNTEyfQ.SY73JH_vjKW17JXaOkmlm0K7NVZBH92lM336GEwNdKA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users/artists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiMzhkNGMyLWViZTUtNDJkNC04N2NiLTY0ZTRjYjQ5YTMyZSIsInJvbGUiOiJCQVNJQyIsImlhdCI6MTYzOTA3MDYxMiwiZXhwIjoxNjM5MDcxNTEyfQ.SY73JH_vjKW17JXaOkmlm0K7NVZBH92lM336GEwNdKA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiMzhkNGMyLWViZTUtNDJkNC04N2NiLTY0ZTRjYjQ5YTMyZSIsInJvbGUiOiJCQVNJQyIsImlhdCI6MTYzOTA3MDYxMiwiZXhwIjoxNjM5MDcxNTEyfQ.SY73JH_vjKW17JXaOkmlm0K7NVZBH92lM336GEwNdKA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiMzhkNGMyLWViZTUtNDJkNC04N2NiLTY0ZTRjYjQ5YTMyZSIsInJvbGUiOiJCQVNJQyIsImlhdCI6MTYzOTA3MDYxMiwiZXhwIjoxNjM5MDcxNTEyfQ.SY73JH_vjKW17JXaOkmlm0K7NVZBH92lM336GEwNdKA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users/all/646a645a-3694-40cc-98f9-70074535a0a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"all",
+								"646a645a-3694-40cc-98f9-70074535a0a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Get Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDQ5OTJjLTdiNzQtNDA1Yi05YzhhLTBmZGJhNTZkOTc5MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzODk1MTYxMSwiZXhwIjoxNjM4OTUxNjI2fQ.Fd10BiiH8E8M_tU-yuMY3MmWdGBDXqMdjKLPI1yALlw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyMDkwYzAwLTg1MDktNDFkYy1iNWFiLWQ4NTA3OGU3ZDMwNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY0MDA5NTc2OSwiZXhwIjoxNjQwMDk2NjY5fQ.x7mPVOrLuNSBqTXobns5on5dmS5Nvi85oTbD5KXejbo",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"techno-\",\n    \"location\": \"tec-hno\",\n    \"started_date\": \"2021-12-24 20:12:54\",\n    \"finish_date\" : \"2021-12-26 6:34:34\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/events/199066c2-e12f-4356-8ed5-62e663c06ffe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"events",
+								"199066c2-e12f-4356-8ed5-62e663c06ffe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"techno-modif\",\n    \"location\": \"tec-hnomodif\",\n    \"started_date\": \"2011-12-24 20:12:54\",\n    \"finish_date\" : \"2011-12-26 7:34:34\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/events/199066c2-e12f-4356-8ed5-62e663c06ffe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"events",
+								"199066c2-e12f-4356-8ed5-62e663c06ffe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/events/199066c2-e12f-4356-8ed5-62e663c06ffe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"events",
+								"199066c2-e12f-4356-8ed5-62e663c06ffe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Get Artists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDQ5OTJjLTdiNzQtNDA1Yi05YzhhLTBmZGJhNTZkOTc5MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzODk1MTYxMSwiZXhwIjoxNjM4OTUxNjI2fQ.Fd10BiiH8E8M_tU-yuMY3MmWdGBDXqMdjKLPI1yALlw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/artists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Artist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"techno-\",\n    \"nationality\": \"tec-hno\",\n    \"music_styles\": \"lksjdflksj\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/artists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/artists/03c6a22d-9df7-4dc7-a2f2-6689e87b2d6d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"artists",
+								"03c6a22d-9df7-4dc7-a2f2-6689e87b2d6d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Artist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"aa-\",\n    \"nationality\": \"tec-a\",\n    \"music_styles\": \"bbb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/artists/03c6a22d-9df7-4dc7-a2f2-6689e87b2d6e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"artists",
+								"03c6a22d-9df7-4dc7-a2f2-6689e87b2d6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Artist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/artists/03c6a22d-9df7-4dc7-a2f2-6689e87b2d6d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"artists",
+								"03c6a22d-9df7-4dc7-a2f2-6689e87b2d6d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow Artist",
+			"item": [
+				{
+					"name": "Follow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"646a645a-3694-40cc-98f9-70074535a0a1\",\n    \"artist_id\": \"269d9728-bf11-4bd7-b604-283a9b99b1e5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/users/follow-artist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"follow-artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"646a645a-3694-40cc-98f9-70074535a0a1\",\n    \"artist_id\": \"269d9728-bf11-4bd7-b604-283a9b99b1e5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/users/follow-artist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"follow-artist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow Event",
+			"item": [
+				{
+					"name": "Follow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"646a645a-3694-40cc-98f9-70074535a0a1\",\n    \"event_id\": \"73f7360e-f5d0-4237-928a-34d2bdcd6212\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/users/follow-event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"follow-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"646a645a-3694-40cc-98f9-70074535a0a1\",\n    \"event_id\": \"73f7360e-f5d0-4237-928a-34d2bdcd6212\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/users/follow-event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users",
+								"follow-event"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Performing Event",
+			"item": [
+				{
+					"name": "Follow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"artist_id\": \"139da5e8-1ff1-4fb1-b443-c6054bb660f3\",\n    \"event_id\": \"73f7360e-f5d0-4237-928a-34d2bdcd6212\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/artists/perform-event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"artists",
+								"perform-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"artist_id\": \"139da5e8-1ff1-4fb1-b443-c6054bb660f3\",\n    \"event_id\": \"73f7360e-f5d0-4237-928a-34d2bdcd6212\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/artists/perform-event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"artists",
+								"perform-event"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
